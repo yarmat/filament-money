@@ -1,0 +1,9 @@
+@media (min-width: 640px) {
+    .money-input-field[data-select-position="left"] .fi-fo-field-content-col .fi-grid {
+        grid-template-columns: var(--money-select-width) minmax(0, 1fr);
+    }
+
+    .money-input-field[data-select-position="right"] .fi-fo-field-content-col .fi-grid {
+        grid-template-columns: minmax(0, 1fr) var(--money-select-width);
+    }
+}
