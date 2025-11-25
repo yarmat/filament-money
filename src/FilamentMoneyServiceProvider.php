@@ -17,12 +17,11 @@ class FilamentMoneyServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('filament-money')
+            ->hasConfigFile('money')
             ->hasInstallCommand(function (InstallCommand $command) {
-                $command->call('vendor:publish', [
-                    '--provider' => 'Cknow\Money\MoneyServiceProvider',
-                ]);
-
-                $command->askToStarRepoOnGitHub('yarmat/filament-money');
+                $command
+                    ->publishConfigFile()
+                    ->askToStarRepoOnGitHub('yarmat/filament-money');
             });
     }
 }
