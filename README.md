@@ -1,13 +1,16 @@
 # Filament Money
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/ymsoft/filament-money.svg?style=flat-square)](https://packagist.org/packages/ymsoft/filament-money)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/ymsoft/filament-money/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/ymsoft/filament-money/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ymsoft/filament-money/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ymsoft/filament-money/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/yarmat/filament-money/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/yarmat/filament-money/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/yarmat/filament-money/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/yarmat/filament-money/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ymsoft/filament-money.svg?style=flat-square)](https://packagist.org/packages/ymsoft/filament-money)
 
 ![Filament Money Plugin Banner](arts/preview.jpg)
 
 A Filament plugin for convenient storage and management of monetary fields with built-in currency support. This package provides form components and table columns that handle money values with proper formatting, validation, and multi-currency support.
+
+> **Bill Karwin:**
+> *"If I had a dime for every time I've seen someone use FLOAT to store currency, I'd have $999.997634"*
 
 ## Table of Contents
 
@@ -62,9 +65,6 @@ A Filament plugin for convenient storage and management of monetary fields with 
 
 ### MoneyColumn in Tables
 ![MoneyColumn in Tables](arts/6.png)
-
-> **Bill Karwin:**
-> *"If I had a dime for every time I've seen someone use FLOAT to store currency, I'd have $999.997634"*
 
 This package is built on top of [cknow/laravel-money](https://github.com/cknow/laravel-money), which provides a robust foundation for handling monetary values in PHP. The `cknow/laravel-money` package wraps the powerful [moneyphp/money](https://github.com/moneyphp/money) library, giving us precise decimal arithmetic, currency conversion, formatting, and proper money object handling. By leveraging this proven library, we ensure that your financial calculations are accurate and your currency data is stored correctly - avoiding the common pitfalls of floating-point arithmetic.
 
