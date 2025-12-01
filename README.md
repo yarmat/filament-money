@@ -5,7 +5,63 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/ymsoft/filament-money/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/ymsoft/filament-money/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/ymsoft/filament-money.svg?style=flat-square)](https://packagist.org/packages/ymsoft/filament-money)
 
+![Filament Money Plugin Banner](arts/preview.jpg)
+
 A Filament plugin for convenient storage and management of monetary fields with built-in currency support. This package provides form components and table columns that handle money values with proper formatting, validation, and multi-currency support.
+
+## Table of Contents
+
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+  - [Custom Theme Setup](#custom-theme-setup)
+- [Usage](#usage)
+  - [Basic Setup](#basic-setup)
+  - [Form Components](#form-components)
+    - [MoneyField with Changeable Currency](#moneyfield-with-changeable-currency)
+    - [MoneyField with Fixed Currency](#moneyfield-with-fixed-currency)
+  - [Table Columns](#table-columns)
+  - [Plugin Configuration](#plugin-configuration)
+    - [Global Currency Settings](#global-currency-settings)
+    - [Currency Position](#currency-position)
+    - [Global Input Modifier](#global-input-modifier)
+    - [Global Select Modifier](#global-select-modifier)
+  - [Data Storage](#data-storage)
+    - [Using Money Casts](#using-money-casts)
+  - [Advanced Usage](#advanced-usage)
+    - [Custom Currency Lists](#custom-currency-lists)
+    - [Validation](#validation)
+    - [Accessing Amount and Currency Separately](#accessing-amount-and-currency-separately)
+  - [Complete Example](#complete-example)
+  - [API Reference](#api-reference)
+    - [MoneyField](#moneyfield)
+    - [MoneyColumn](#moneycolumn)
+    - [FilamentMoneyPlugin](#filamentmoneyplugin)
+- [Testing](#testing)
+- [Changelog](#changelog)
+- [Contributing](#contributing)
+- [Security Vulnerabilities](#security-vulnerabilities)
+- [Credits](#credits)
+- [License](#license)
+
+## Screenshots
+
+### MoneyField with Changeable Currency (Light Theme)
+![MoneyField Changeable Currency Light](arts/1.png)
+
+### MoneyField with Changeable Currency (Dark Theme)
+![MoneyField Changeable Currency Dark](arts/2.png)
+
+### Currency Dropdown with Search
+![Currency Dropdown](arts/3.png)
+
+### Customizable Select Width
+![Customizable Select Width](arts/4.png)
+
+### MoneyField with Fixed Currency
+![MoneyField Fixed Currency](arts/5.png)
+
+### MoneyColumn in Tables
+![MoneyColumn in Tables](arts/6.png)
 
 > **Bill Karwin:**
 > *"If I had a dime for every time I've seen someone use FLOAT to store currency, I'd have $999.997634"*
