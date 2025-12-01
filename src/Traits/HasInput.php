@@ -10,7 +10,7 @@ trait HasInput
     protected TextInput $input;
 
     /**
-     * @param  Closure(TextInput): void  $callback
+     * @param  Closure(TextInput): TextInput  $callback
      */
     public function input(Closure $callback): static
     {

@@ -10,7 +10,7 @@ trait HasSelect
     protected Select $select;
 
     /**
-     * @param  Closure(Select): void  $callback
+     * @param  Closure(Select): Select  $callback
      */
     public function select(Closure $callback): static
     {
