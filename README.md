@@ -20,7 +20,15 @@ You can install the package via composer:
 composer require ymsoft/filament-money
 ```
 
-You can publish the config file with:
+After installing, run the installation command:
+
+```bash
+php artisan filament-money:install
+```
+
+This command will publish the config file and set up the necessary assets.
+
+Alternatively, you can manually publish the config file with:
 
 ```bash
 php artisan vendor:publish --tag="filament-money-config"
@@ -47,6 +55,26 @@ return [
     ],
 ];
 ```
+
+### Custom Theme Setup
+
+To ensure proper styling, you need to use a custom theme and include the plugin's CSS:
+
+**Step 1:** Make sure you have a custom theme configured in your Filament panel.
+
+**Step 2:** Add the plugin's CSS import to your theme file (e.g., `resources/css/filament/admin/theme.css`):
+
+```css
+@import '../../../../vendor/ymsoft/filament-money/resources/css/styles.css';
+```
+
+**Step 3:** Recompile your theme:
+
+```bash
+npm run build
+```
+
+> **Note:** Make sure the vendor folder for this plugin is published so that it includes the Tailwind CSS classes.
 
 ## Usage
 
@@ -448,7 +476,7 @@ class ProductResource extends Resource
 ##### Static Methods
 
 - `MoneyField::make(string $name)` - Creates a money field with changeable currency
-- `MoneyField::fixed(string $name)` - Creates a money field with fixed currency
+  - `MoneyField::fixed(string $name)` - Creates a money field with fixed currency
 
 ##### Methods (MoneyChangeableCurrency)
 
