@@ -7,6 +7,7 @@ use Cknow\Money\Money;
 use Closure;
 use Filament\Facades\Filament;
 use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Utilities\Get;
 use Money\Formatter\DecimalMoneyFormatter;
 use Ymsoft\FilamentMoney\FilamentMoneyPlugin;
 
@@ -128,12 +129,13 @@ class MoneyField
             return $state;
         });
 
-        $field->dehydrateStateUsing(function ($state): ?Money {
+        $field->dehydrateStateUsing(function ($state, Get $get): ?Money {
             $amountKey = $this->getAmountKey();
             $currencyKey = $this->getCurrencyKey();
+            $currency = $state[$currencyKey] ?? $get($this->getCurrencyKey()) ?? $this->defaultCurrency;
 
-            if (is_array($state) && array_key_exists($amountKey, $state) && array_key_exists($currencyKey, $state)) {
-                return new Money($state[$amountKey], $state[$currencyKey], true);
+            if (is_array($state) && array_key_exists($amountKey, $state)) {
+                return new Money($state[$amountKey], $currency, true);
             }
 
             return null;
