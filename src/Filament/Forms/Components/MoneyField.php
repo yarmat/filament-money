@@ -141,6 +141,6 @@ class MoneyField
             return null;
         });
 
-        $field->default(new Money(null, $this->defaultCurrency));
+        $field->default(new Money(currency: $this->defaultCurrency));
     }
 }
