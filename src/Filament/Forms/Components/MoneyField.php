@@ -115,15 +115,38 @@ class MoneyField
 
     private function setupField(Component $field): void
     {
-        $field->formatStateUsing(function ($state): ?array {
+        $field->formatStateUsing(function ($state, $component): ?array {
+            // Ensure we always return an array or null as declared
+            if (! is_array($state)) {
+                return null;
+            }
+
             $amountKey = $this->getAmountKey();
             $currencyKey = $this->getCurrencyKey();
 
-            if (is_array($state) && isset($state[$amountKey])) {
-                $formatter = new DecimalMoneyFormatter(static::getCurrencies());
-                $result = $formatter->format(new \Money\Money($state[$amountKey], static::parseCurrency($state[$currencyKey])));
+            // Resolve available currencies from component (if changeable) or defaults
+            $availableCurrencies = $this->defaultAvailableCurrencies;
+            if ($component instanceof MoneyChangeableCurrency) {
+                $availableCurrencies = $component->getCurrencies();
+            }
 
-                $state[$amountKey] = $result;
+            // Normalize currency if a set of allowed currencies is provided
+            if (! empty($availableCurrencies)) {
+                $currentCurrency = $state[$currencyKey] ?? null;
+                if ($currentCurrency === null || ! in_array($currentCurrency, $availableCurrencies, true)) {
+                    $state[$currencyKey] = $availableCurrencies[0];
+                }
+            }
+
+            // Format amount using DecimalMoneyFormatter when amount is present
+            if (array_key_exists($amountKey, $state)) {
+                $currencyCode = $state[$currencyKey] ?? null;
+                if ($currencyCode !== null) {
+                    $formatter = new DecimalMoneyFormatter(static::getCurrencies());
+                    $state[$amountKey] = $formatter->format(
+                        new \Money\Money($state[$amountKey], static::parseCurrency($currencyCode))
+                    );
+                }
             }
 
             return $state;
