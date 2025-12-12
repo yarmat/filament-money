@@ -1,12 +1,12 @@
 <?php
 
-namespace Ymsoft\FilamentMoney\Filament;
+namespace Ymsoft\FilamentMoney\Filament\Infolists\Components;
 
 use Cknow\Money\CurrenciesTrait;
 use Cknow\Money\Money;
 use Filament\Infolists\Components\TextEntry;
 
-class MoneyTextEntry extends TextEntry
+class MoneyEntry extends TextEntry
 {
     use CurrenciesTrait;
 

@@ -23,6 +23,7 @@ A Filament plugin for convenient storage and management of monetary fields with 
     - [MoneyField with Changeable Currency](#moneyfield-with-changeable-currency)
     - [MoneyField with Fixed Currency](#moneyfield-with-fixed-currency)
   - [Table Columns](#table-columns)
+  - [Infolist Components](#infolist-components)
   - [Plugin Configuration](#plugin-configuration)
     - [Global Currency Settings](#global-currency-settings)
     - [Currency Position](#currency-position)
@@ -290,6 +291,28 @@ MoneyColumn::make('price')
 ```
 
 The column automatically:
+- Formats the money value according to the currency
+- Displays the currency symbol or code
+- Handles different decimal precision based on currency (e.g., 2 decimals for USD, 0 for JPY)
+- For currencies with more than 2 decimal places, displays the decimal format with currency code
+
+**Example Output:**
+- `$1,234.56` for USD
+- `€1.234,56` for EUR
+- `¥1,235` for JPY (no decimals)
+- `0.00123456 BTC` for Bitcoin (high precision)
+
+### Infolist Components
+
+Display money values in infolists with automatic formatting:
+
+```php
+use Ymsoft\FilamentMoney\Filament\Infolists\Components\MoneyEntry;
+
+MoneyEntry::make('price')
+```
+
+The entry automatically:
 - Formats the money value according to the currency
 - Displays the currency symbol or code
 - Handles different decimal precision based on currency (e.g., 2 decimals for USD, 0 for JPY)
