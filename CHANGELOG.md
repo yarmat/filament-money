@@ -2,6 +2,18 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## 0.1.4 - 2026-03-25
+
+### What's Changed
+
+* Support Filament 5 by @jeffreyvanhees in https://github.com/yarmat/filament-money/pull/5
+
+### New Contributors
+
+* @jeffreyvanhees made their first contribution in https://github.com/yarmat/filament-money/pull/5
+
+**Full Changelog**: https://github.com/yarmat/filament-money/compare/0.1.3...0.1.4
+
 ## 0.1.3 - 2025-12-12
 
 **Full Changelog**: https://github.com/yarmat/filament-money/compare/0.1.2...0.1.3
