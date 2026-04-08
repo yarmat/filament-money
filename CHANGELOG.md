@@ -2,6 +2,14 @@
 
 All notable changes to `filament-money` will be documented in this file.
 
+## 0.1.5 - 2026-04-08
+
+### What's Changed
+
+* Support Laravel 13 (illuminate/contracts ^13.0) by @jeffreyvanhees in https://github.com/yarmat/filament-money/pull/7
+
+**Full Changelog**: https://github.com/yarmat/filament-money/compare/0.1.4...0.1.5
+
 ## 0.1.4 - 2026-03-25
 
 ### What's Changed
